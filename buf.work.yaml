@@ -1,0 +1,4 @@
+---
+version: v1
+directories:
+  - chapter07/src/main/proto

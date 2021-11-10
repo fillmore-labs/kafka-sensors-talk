@@ -1,0 +1,129 @@
+= Kafka Streams Talk (WIP)
+:Author:    Oliver Eikemeier
+:Email:     <eikemeier@fillmore-labs.com>
+:Date:      2021-11
+:Revision:  v0.1
+:toc: macro
+
+image:https://badge.buildkite.com/b3c73da7e2444c976b8618fa51050753ab61048959b1aadbb6.svg?branch=main[title="Buildkite build status",link=https://buildkite.com/fillmore-labs/kafka-sensors-chapterized]
+
+toc::[]
+
+Talk outline, work in progress.
+
+== Chapter 01: Introduction
+
+* No code, only whiteboard
+* Model the data
+* API first (sort of)
+
+== Chapter 02: Model & Business Logic
+
+* Implement model and business logic
+* Independent of any other part of the program
+
+[source,shell]
+bazel test //chapter02/...
+
+== Chapter 03: JSON Serialization
+
+* Implement JSON API
+* Independent of our model
+* Can run integration tests with external sources
+* Can produce sample data for external clients
+
+[source,shell]
+bazel test //chapter03/...
+
+== Chapter 04: Integrate JSON Serialization with Our Model
+
+* Glue code between external API and model (ports and adapters)
+* Must be adapated for every change in API or model
+* Is usually pretty simple
+* Concrete serialization format does not show up in our test
+
+[source,shell]
+bazel test //chapter04/...
+
+== Chapter 05: Integrate Business Logic with Kafka Streams
+
+* Use our own embedded Kafka 3.0 Server, because we can
+* Define a typesafe Kafka Streams topology
+
+[source,shell]
+bazel test //chapter05/...
+
+== Chapter 06: Our First `main`: A Complete Application
+
+* So far, we have been driven by tests
+* Run a local Kafka server
+
+[source,shell]
+bazel run //:kafka-sensors
+
+== Chapter 07: More Serialization Formats
+
+* Protocol Buffers
+* Apache Thrift
+* Alternate JSON implementation: GSON
+* Serializing the model with mix-ins, useful for prototyping
+* Because we can: Amazon Ion
+* Same pattern as in Chapters 03 & 04
+
+[source,shell]
+bazel test //chapter07/...
+
+== Chapter 08: Apache Avro
+
+* History: https://www.slideshare.net/cloudera/apachecon09-doug-cutting-on-avro[ApacheCon09: Avro]
+* Apache Hadoop, Apache Pig, Apache Hive
+* Dynamic format
+* Writer and reader schema required
+
+[source,shell]
+bazel test //chapter08/...
+
+== Chapter 09: Confluent Variants
+
+* History: https://issues.apache.org/jira/browse/AVRO-1124[AVRO-1124: RESTful service for holding schemas]
+* Incompatible with standard serializers
+
+[source,shell]
+bazel test //chapter09/...
+
+== Chapter 10: Benchmarks
+
+* Maybe not the most important part, but interesting
+* Some implementations are slow
+* Investigate
+
+[source,shell]
+----
+bazel run //:bench10
+
+bazel run //:bench10 -- -p "format=avro-specific,avro-generic" \
+  -prof "async:output=flamegraph;direction=forward" "Bench\\.serialize"
+
+bazel run //:bench10 -- -p "format=gson,json" \
+  -prof "async:output=flamegraph;direction=forward" "Bench\\.deserialize"
+----
+
+== Chapter 11: Revised Serialization Implementations
+
+* Make serializers faster
+
+[source,shell]
+bazel test //chapter11/...
+bazel run //:benchmark
+
+== Chapter 12: Wrap up
+
+* Comparison of formats, what to use when
+* Used techniques
+** Value objects
+** Hexagonal Architecture
+** Development driven by tests
+* Decoupled development enables separate testing and benchmarking
+* Early integration tests possible
+* Slow implementations are not hidden in the business logic
+* Separate input and business rules validation
