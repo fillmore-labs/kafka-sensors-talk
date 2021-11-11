@@ -6,7 +6,6 @@ java_library(
     srcs = glob(["*.java"]),
     deps = [
         "//chapter02/src/main/java/com/fillmore_labs/kafka/sensors/model",
-        "//chapter05/src/test/java/com/fillmore_labs/kafka/sensors/topology/server",
         "//chapter07/src/test/java/com/fillmore_labs/kafka/sensors/topology07/context",
         "//toolchain:checker",
         "//toolchain:test",

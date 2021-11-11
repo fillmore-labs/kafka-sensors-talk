@@ -3,3 +3,7 @@
 .ijwb
 .idea
 bin
+bazel-bin
+bazel-kafka-sensors-talk
+bazel-out
+bazel-testlogs

@@ -8,19 +8,18 @@ import com.fillmore_labs.kafka.sensors.model.Reading.Position;
 import com.fillmore_labs.kafka.sensors.model.SensorState;
 import com.fillmore_labs.kafka.sensors.model.StateDuration;
 import com.fillmore_labs.kafka.sensors.topology.context.TestResource;
-import com.fillmore_labs.kafka.sensors.topology.server.EmbeddedKafka;
 import java.time.Duration;
 import java.time.Instant;
 import org.apache.kafka.streams.TestInputTopic;
 import org.apache.kafka.streams.TestOutputTopic;
 import org.apache.kafka.streams.errors.StreamsException;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 
 public final class TopologyTest {
-  @ClassRule public static final EmbeddedKafka KAFKA_TEST_RESOURCE = new EmbeddedKafka();
-  @ClassRule public static final TestResource TEST_RESOURCE = new TestResource(KAFKA_TEST_RESOURCE);
+  @ClassRule public static final TestResource TEST_RESOURCE = new TestResource();
 
   private final TestInputTopic<String, SensorState> inputTopic;
   private final TestOutputTopic<String, StateDuration> resultTopic;
@@ -32,6 +31,11 @@ public final class TopologyTest {
 
   @Before
   public void before() {
+    assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
+  }
+
+  @After
+  public void after() {
     assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
   }
 
@@ -64,8 +68,6 @@ public final class TopologyTest {
     assertThat(result2.value).isNotNull();
     assertThat(result2.value.getReading()).isEqualTo(sensorReading1.getReading());
     assertThat(result2.value.getDuration()).isEqualTo(Duration.ofSeconds(30));
-
-    assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
   }
 
   @Test
@@ -130,8 +132,6 @@ public final class TopologyTest {
     assertThat(result4.value).isNotNull();
     assertThat(result4.value.getReading()).isEqualTo(newState2.getReading());
     assertThat(result4.value.getDuration()).isEqualTo(Duration.ofSeconds(15));
-
-    assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
   }
 
   @Test
@@ -162,7 +162,7 @@ public final class TopologyTest {
             .build();
 
     pipeState(newState);
-    assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
+    // Should not produce any output, tested by {@link after()}
   }
 
   @Test
@@ -189,7 +189,5 @@ public final class TopologyTest {
     var excpetion = assertThrows(StreamsException.class, () -> pipeState(newState));
     // This is an implementation detail of our model and should probably not be tested here.
     assertThat(excpetion).hasCauseThat().isInstanceOf(IllegalStateException.class);
-
-    assertThat(resultTopic.getQueueSize()).isEqualTo(0L);
   }
 }

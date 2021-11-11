@@ -8,7 +8,6 @@ java_library(
         "//chapter02/src/main/java/com/fillmore_labs/kafka/sensors/model",
         "//chapter05/src/main/java/com/fillmore_labs/kafka/sensors/topology",
         "//chapter05/src/test/java/com/fillmore_labs/kafka/sensors/topology/context",
-        "//chapter05/src/test/java/com/fillmore_labs/kafka/sensors/topology/server",
         "//toolchain:checker",
         "//toolchain:test",
         "@maven//:com_google_errorprone_error_prone_annotations",

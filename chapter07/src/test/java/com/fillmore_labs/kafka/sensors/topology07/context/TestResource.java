@@ -1,13 +1,9 @@
-package com.fillmore_labs.kafka.sensors.topology.context;
+package com.fillmore_labs.kafka.sensors.topology07.context;
 
-import com.fillmore_labs.kafka.sensors.model.SensorState;
-import com.fillmore_labs.kafka.sensors.model.StateDuration;
 import com.fillmore_labs.kafka.sensors.topology.server.EmbeddedKafka;
 import java.util.Properties;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsConfig;
-import org.apache.kafka.streams.TestInputTopic;
-import org.apache.kafka.streams.TestOutputTopic;
 import org.junit.rules.ExternalResource;
 
 public final class TestResource extends ExternalResource {
@@ -35,12 +31,13 @@ public final class TestResource extends ExternalResource {
     return settings;
   }
 
-  public TestInputTopic<String, SensorState> inputTopic() {
-    return testComponent.inputTopic();
+  public SingleTestComponent.Builder singleTestComponentBuilder() {
+    return testComponent.singleTestComponentBuilder();
   }
 
-  public TestOutputTopic<String, StateDuration> resultTopic() {
-    return testComponent.resultTopic();
+  // called before `before`
+  public Iterable<Formats> parameters() {
+    return testComponent.parameters();
   }
 
   @Override
@@ -51,6 +48,5 @@ public final class TestResource extends ExternalResource {
   @Override
   protected void after() {
     embeddedKafka.shutdown();
-    testComponent.testDriver().close();
   }
 }
