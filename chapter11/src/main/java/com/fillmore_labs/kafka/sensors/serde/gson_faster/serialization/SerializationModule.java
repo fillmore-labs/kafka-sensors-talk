@@ -3,7 +3,6 @@ package com.fillmore_labs.kafka.sensors.serde.gson_faster.serialization;
 import com.fillmore_labs.kafka.sensors.serde.gson.serialization.ReadingGson;
 import com.fillmore_labs.kafka.sensors.serde.gson.serialization.SensorStateGson;
 import com.fillmore_labs.kafka.sensors.serde.gson.serialization.StateDurationGson;
-import com.fillmore_labs.kafka.sensors.serde.serializer.gson_faster.GsonFastDeserializer;
 import com.google.gson.Gson;
 import dagger.Module;
 import dagger.Provides;

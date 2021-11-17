@@ -1,4 +1,4 @@
-package com.fillmore_labs.kafka.sensors.serde.serializer.gson_faster;
+package com.fillmore_labs.kafka.sensors.serde.gson_faster.serialization;
 
 import com.google.gson.TypeAdapter;
 import java.io.IOException;
@@ -23,7 +23,7 @@ public final class GsonFastDeserializer<T> implements Deserializer<T> {
     try {
       var json = new String(data, StandardCharsets.UTF_8);
       return adapter.fromJson(json);
-    } catch (IOException | IllegalArgumentException e) {
+    } catch (IOException | IllegalArgumentException | IllegalStateException e) {
       var message = String.format("Error while parsing GSON from topic \"%s\"", topic);
       throw new SerializationException(message, e);
     }

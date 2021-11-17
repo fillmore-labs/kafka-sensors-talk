@@ -8,6 +8,7 @@ java_library(
         "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/gson:__subpackages__",
         "//chapter07/src/test:__subpackages__",
         "//chapter11/src/main/java/com/fillmore_labs/kafka/sensors/serde/gson_faster:__subpackages__",
+        "//chapter11/src/test:__subpackages__",
     ],
     deps = [
         "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/serializer/gson",

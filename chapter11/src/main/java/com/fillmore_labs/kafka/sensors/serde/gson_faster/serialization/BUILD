@@ -6,10 +6,10 @@ java_library(
     javacopts = ["-AskipDefs=\\.(Immutable|GsonAdapters)[A-Z][A-Za-z0-9]*$$"],
     visibility = [
         "//chapter11/src/main/java/com/fillmore_labs/kafka/sensors/serde/gson_faster:__subpackages__",
+        "//chapter11/src/test:__subpackages__",
     ],
     deps = [
         "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/gson/serialization",
-        "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/serializer/gson_faster",
         "//toolchain:checker",
         "//toolchain:dagger",
         "@maven//:com_google_code_gson_gson",

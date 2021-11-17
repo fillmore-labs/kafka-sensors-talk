@@ -25,7 +25,7 @@ public final class GsonDeserializer<T> implements Deserializer<T> {
     try (var inputStream = new ByteArrayInputStream(data);
         var reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
       return adapter.fromJson(reader);
-    } catch (IOException | NullPointerException e) {
+    } catch (IOException | NullPointerException | IllegalStateException e) {
       var message = String.format("Error while parsing GSON from topic \"%s\"", topic);
       throw new SerializationException(message, e);
     }
