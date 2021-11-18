@@ -10,6 +10,7 @@ gen_java_tests(
         "//toolchain:checker",
         "//toolchain:test",
         "@maven//:com_google_guava_guava",
+        "@maven//:com_google_testparameterinjector_test_parameter_injector",
         "@maven//:org_apache_avro_avro",
     ],
 )
