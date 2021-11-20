@@ -1,0 +1,7 @@
+---
+coverage:
+  status:
+    project: false
+    patch: false
+ignore:
+  - chapter06/src/main/java/com/fillmore_labs/kafka/sensors

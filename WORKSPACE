@@ -355,13 +355,13 @@ maven_install(
         maven.artifact(
             "org.mockito",
             "mockito-core",
-            "4.0.0",
+            "4.1.0",
             testonly = True,
         ),
         maven.artifact(
             "org.mockito",
             "mockito-errorprone",
-            "4.0.0",
+            "4.1.0",
             testonly = True,
         ),
         maven.artifact(
