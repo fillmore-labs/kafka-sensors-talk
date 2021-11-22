@@ -56,7 +56,7 @@ public abstract class TestModule {
       @Named(JSON) Serde<SensorState> inputSerde,
       @Named(JSON) Serde<Reading> storeSerde,
       @Named(JSON) Serde<StateDuration> resultSerde) {
-    var random = new Random().nextInt(10000);
+    var random = new Random().nextInt(10_000);
     var inputTopic = INPUT_TOPIC + random;
     var resultTopic = RESULT_TOPIC + random;
     var storeName = STORE_NAME + random;

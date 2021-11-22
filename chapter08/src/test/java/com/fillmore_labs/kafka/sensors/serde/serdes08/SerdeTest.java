@@ -13,7 +13,7 @@ public final class SerdeTest extends SerdeTestBase<SensorState> {
     super(
         singleTestComponent.serializer(),
         singleTestComponent.deserializer(),
-        com.fillmore_labs.kafka.sensors.serde.serdes08.TestHelper.standardSensorState());
+        TestHelper.standardSensorState());
   }
 
   @Parameters(name = "{index}: {0}")

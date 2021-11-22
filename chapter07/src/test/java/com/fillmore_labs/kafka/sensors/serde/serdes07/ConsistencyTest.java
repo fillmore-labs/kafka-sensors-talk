@@ -8,8 +8,7 @@ public final class ConsistencyTest extends ConsistencyTestBase {
     "ion", "json", "protobuf", "thrift",
   };
 
-  private static final com.fillmore_labs.kafka.sensors.serde.serdes07.context.TestComponent
-      TEST_COMPONENT = TestComponent.create();
+  private static final TestComponent TEST_COMPONENT = TestComponent.create();
 
   public ConsistencyTest() {
     super(

@@ -13,7 +13,7 @@ public final class SerdeReadingTest extends SerdeTestBase<Reading> {
     super(
         singleTestComponent.serializerReading(),
         singleTestComponent.deserializerReading(),
-        com.fillmore_labs.kafka.sensors.serde.serdes07.TestHelper.standardReading());
+        TestHelper.standardReading());
   }
 
   @Parameters(name = "{index}: {0}")
