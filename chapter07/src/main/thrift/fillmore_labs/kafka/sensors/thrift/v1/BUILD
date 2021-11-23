@@ -28,6 +28,7 @@ thrift_library(
     name = "sensor_state_thrift",
     srcs = ["sensor_state.thrift"],
     absolute_prefix = "chapter07/src/main/thrift",
+    visibility = ["//chapter07/src/test/thrift:__subpackages__"],
 )
 
 thrift_library(

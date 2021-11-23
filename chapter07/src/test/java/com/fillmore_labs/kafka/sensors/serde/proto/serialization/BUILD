@@ -6,7 +6,9 @@ gen_java_tests(
     javacopts = ["-AskipDefs=\\.Dagger"],
     deps = [
         "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/proto/serialization",
+        "//chapter07/src/main/java/com/fillmore_labs/kafka/sensors/serde/serializer/proto",
         "//chapter07/src/main/proto/fillmore_labs/kafka/sensors/proto/v1",
+        "//chapter07/src/test/proto/fillmore_labs/kafka/sensors/proto/v1",
         "//toolchain:checker",
         "//toolchain:dagger",
         "//toolchain:test",

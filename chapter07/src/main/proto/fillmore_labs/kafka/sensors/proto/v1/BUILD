@@ -29,6 +29,7 @@ proto_library(
     name = "sensor_state_proto",
     srcs = ["sensor_state.proto"],
     strip_import_prefix = "/chapter07/src/main/proto",
+    visibility = ["//chapter07/src/test/proto:__subpackages__"],
     deps = ["@com_google_protobuf//:timestamp_proto"],
 )
 
