@@ -1,4 +1,4 @@
-= Kafka Streams Talk (WIP)
+= Kafka Serialization Talk (WIP)
 :Author:    Oliver Eikemeier
 :Email:     <eikemeier@fillmore-labs.com>
 :Date:      2021-11
