@@ -3,7 +3,10 @@ load("@rules_java//java:defs.bzl", "java_library")
 java_library(
     name = "confluent",
     srcs = glob(["*.java"]),
-    visibility = ["//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent:__subpackages__"],
+    visibility = [
+        "//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent:__subpackages__",
+        "//chapter09/src/test:__subpackages__",
+    ],
     deps = [
         "//toolchain:checker",
         "@confluent_schema_registry//:kafka_avro_serializer",

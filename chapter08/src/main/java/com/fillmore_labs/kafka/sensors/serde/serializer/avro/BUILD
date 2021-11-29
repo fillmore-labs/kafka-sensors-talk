@@ -5,6 +5,7 @@ java_library(
     srcs = glob(["*.java"]),
     visibility = [
         "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro:__subpackages__",
+        "//chapter08/src/test:__subpackages__",
         "//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent:__subpackages__",
     ],
     deps = [

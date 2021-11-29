@@ -11,6 +11,7 @@ java_library(
     visibility = ["//chapter11/src/test/java/com/fillmore_labs/kafka/sensors/serde/all_serdes:__pkg__"],
     deps = [
         "//chapter02/src/main/java/com/fillmore_labs/kafka/sensors/model",
+        "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/schema_store",
         "//chapter09/src/test/java/com/fillmore_labs/kafka/sensors/serde/confluent/common",
         "//chapter11/src/main/java/com/fillmore_labs/kafka/sensors/serde/all_serdes",
         "//toolchain:checker",
