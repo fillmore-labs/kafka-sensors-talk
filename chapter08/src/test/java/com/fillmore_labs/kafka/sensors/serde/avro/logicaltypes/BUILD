@@ -4,7 +4,9 @@ gen_java_tests(
     name = "tests",
     srcs = glob(["*.java"]),
     deps = [
-        "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/schema_demo",
+        "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/logicaltypes",
+        "//toolchain:checker",
         "//toolchain:test",
+        "@maven//:org_apache_avro_avro",
     ],
 )

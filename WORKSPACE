@@ -72,16 +72,16 @@ http_archive(
 
 http_archive(
     name = "com_google_dagger",
-    sha256 = "3c591b785bbc7ea0dfac4db5c31ed3e4532ffd131bb1841c70621f7129a83630",
-    strip_prefix = "dagger-dagger-2.40.2",
-    url = "https://github.com/google/dagger/archive/dagger-2.40.2.tar.gz",
+    sha256 = "268211ca72aa02c0c4f5f67a10f90243ed8e776b541996cb8acea5ef53a05999",
+    strip_prefix = "dagger-dagger-2.40.4",
+    url = "https://github.com/google/dagger/archive/dagger-2.40.4.tar.gz",
 )
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "ae34c344514e08c23e90da0e2d6cb700fcd28e80c02e23e4d5715dddcb42f7b3",
-    strip_prefix = "buildtools-4.2.2",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.2.tar.gz",
+    sha256 = "614c84128ddb86aab4e1f25ba2e027d32fd5c6da302ae30685b9d7973b13da1b",
+    strip_prefix = "buildtools-4.2.3",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.3.tar.gz",
 )
 
 http_archive(

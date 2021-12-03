@@ -8,7 +8,6 @@ avro_java_library(
     visibility = [
         "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/specific:__subpackages__",
         "//chapter08/src/test:__subpackages__",
-        "//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent/avro_demo:__pkg__",
         "//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent/specific:__subpackages__",
         "//chapter09/src/test:__subpackages__",
         "//chapter11/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/specific_faster:__subpackages__",
