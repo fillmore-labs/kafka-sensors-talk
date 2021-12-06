@@ -1,18 +1,33 @@
 ---
 steps:
+  - label: ':bazel: Build & Test'
+    commands:
+      - bazel build
+        //chapter02/... //chapter03/... //chapter04/... //chapter05/... //chapter06/...
+        //chapter07/... //chapter08/... //chapter09/... //chapter10/... //chapter11/...
+      - bazel test --test_output=errors --test_summary=terse
+        //chapter02/... //chapter03/... //chapter04/... //chapter05/...
+        //chapter07/... //chapter08/... //chapter09/... //chapter11/...
+    branches: "!main"
+
   - label: ':bazel: Test & Coverage'
     commands:
-      - bazel coverage --combined_report=lcov //chapter02/... //chapter03/... //chapter04/...
-        //chapter05/... //chapter07/... //chapter08/... //chapter09/... //chapter11/...
-  - wait
+      - bazel coverage --test_output=errors --test_summary=terse --combined_report=lcov
+        //chapter02/... //chapter03/... //chapter04/... //chapter05/...
+        //chapter07/... //chapter08/... //chapter09/... //chapter11/...
+    branches: "main"
+    key: "coverage"
+
   - label: ':codecov: Upload Coverage'
     commands:
       - codecov -f "$(bazel info output_path)/_coverage/_coverage_report.dat"
     branches: "main"
-  - wait
+    depends_on: "coverage"
+
   - label: ':codeclimate: Upload Coverage'
     commands:
       - cc-test-reporter format-coverage -t lcov -o .coverage/codeclimate.json
         "$(bazel info output_path)/_coverage/_coverage_report.dat"
       - cc-test-reporter upload-coverage -r "$CC_TEST_REPORTER_ID" -i .coverage/codeclimate.json
     branches: "main"
+    depends_on: "coverage"
