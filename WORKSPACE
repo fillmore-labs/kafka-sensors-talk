@@ -50,13 +50,6 @@ http_archive(
 )
 
 http_archive(
-    name = "io_bazel_rules_docker",
-    sha256 = "59536e6ae64359b716ba9c46c39183403b01eabfbd57578e84398b4829ca499a",
-    strip_prefix = "rules_docker-0.22.0",
-    url = "https://github.com/bazelbuild/rules_docker/releases/download/v0.22.0/rules_docker-v0.22.0.tar.gz",
-)
-
-http_archive(
     name = "rules_jvm_external",
     sha256 = "2cd77de091e5376afaf9cc391c15f093ebd0105192373b334f0a855d89092ad5",
     strip_prefix = "rules_jvm_external-4.2",
@@ -79,9 +72,9 @@ http_archive(
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "614c84128ddb86aab4e1f25ba2e027d32fd5c6da302ae30685b9d7973b13da1b",
-    strip_prefix = "buildtools-4.2.3",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.3.tar.gz",
+    sha256 = "",
+    strip_prefix = "buildtools-4.2.4",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.4.tar.gz",
 )
 
 http_archive(
@@ -95,7 +88,7 @@ http_archive(
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.17.3")
+go_register_toolchains(go_version = "1.17.5")
 
 go_rules_dependencies()
 
@@ -153,20 +146,6 @@ load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_
 rules_proto_dependencies()
 
 rules_proto_toolchains()
-
-# ---
-
-load("@io_bazel_rules_docker//repositories:repositories.bzl", container_repositories = "repositories")
-
-container_repositories()
-
-load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
-
-container_deps()
-
-load("@io_bazel_rules_docker//go:image.bzl", go_repositories = "repositories")
-
-go_repositories()
 
 # ---
 
@@ -257,31 +236,26 @@ async_profiler_repositories()
 
 # ---
 
-load("//third_party/images:defs.bzl", "base_images")
-
-base_images()
-
-# ---
-
 load("@rules_jvm_external//:defs.bzl", "maven_install")
-load("@rules_jvm_external//:specs.bzl", "maven")
+load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
         "com.amazon.ion:ion-java:1.9.0",
-        "com.fasterxml.jackson.core:jackson-annotations:2.13.0",
-        "com.fasterxml.jackson.core:jackson-core:2.13.0",
-        "com.fasterxml.jackson.core:jackson-databind:2.13.0",
-        "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.13.0",
-        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.0",
-        "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.0",
-        "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0",
-        "com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.0",
+        "com.fasterxml.jackson.core:jackson-annotations:2.13.1",
+        "com.fasterxml.jackson.core:jackson-core:2.13.1",
+        "com.fasterxml.jackson.core:jackson-databind:2.13.1",
+        "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.13.1",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.1",
+        "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.1",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1",
+        "com.fasterxml.jackson.module:jackson-module-blackbird:2.13.1",
+        "com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.1",
         "com.google.code.findbugs:jsr305:3.0.2",
         "com.google.code.gson:gson:2.8.9",
         "com.google.errorprone:error_prone_annotations:2.10.0",
-        "com.google.flogger:flogger-system-backend:0.7.1",
-        "com.google.flogger:flogger:0.7.1",
+        "com.google.flogger:flogger-system-backend:0.7.3",
+        "com.google.flogger:flogger:0.7.3",
         "com.google.guava:guava:31.0.1-jre",
         "com.google.j2objc:j2objc-annotations:1.3",
         "com.networknt:json-schema-validator:1.0.64",
@@ -296,77 +270,28 @@ maven_install(
         "org.apache.kafka:kafka-streams:3.0.0",
         "org.apache.kafka:kafka_2.13:3.0.0",
         "org.apache.thrift:libthrift:0.15.0",
-        "org.checkerframework:checker-qual:3.20.0",
-        "org.checkerframework:checker-util:3.20.0",
-        "org.checkerframework:checker:3.20.0",
+        "org.checkerframework:checker-qual:3.21.0",
+        "org.checkerframework:checker-util:3.21.0",
+        "org.checkerframework:checker:3.21.0",
         "org.immutables:gson:2.9.0-rc1",
         "org.immutables:value-annotations:2.9.0-rc1",
         "org.immutables:value-processor:2.9.0-rc1",
-        "org.mapstruct:mapstruct-processor:1.5.0.Beta1",
-        "org.mapstruct:mapstruct:1.5.0.Beta1",
+        "org.mapstruct:mapstruct-processor:1.5.0.Beta2",
+        "org.mapstruct:mapstruct:1.5.0.Beta2",
         "org.slf4j:slf4j-api:2.0.0-alpha5",
         "org.slf4j:slf4j-jdk14:2.0.0-alpha5",
-        maven.artifact(
-            "com.google.testparameterinjector",
-            "test-parameter-injector",
-            "1.6",
-            testonly = True,
-        ),
-        maven.artifact(
-            "com.google.truth",
-            "truth",
-            "1.1.3",
-            testonly = True,
-        ),
-        maven.artifact(
-            "com.google.truth.extensions",
-            "truth-java8-extension",
-            "1.1.3",
-            testonly = True,
-        ),
-        maven.artifact(
-            "com.google.truth.extensions",
-            "truth-liteproto-extension",
-            "1.1.3",
-            testonly = True,
-        ),
-        maven.artifact(
-            "com.google.truth.extensions",
-            "truth-proto-extension",
-            "1.1.3",
-            testonly = True,
-        ),
-        maven.artifact(
-            "junit",
-            "junit",
-            "4.13.2",
-            testonly = True,
-        ),
-        maven.artifact(
-            "nl.jqno.equalsverifier",
-            "equalsverifier",
-            "3.8",
-            testonly = True,
-        ),
-        maven.artifact(
-            "org.apache.kafka",
-            "kafka-streams-test-utils",
-            "3.0.0",
-            testonly = True,
-        ),
-        maven.artifact(
-            "org.mockito",
-            "mockito-core",
-            "4.1.0",
-            testonly = True,
-        ),
-        maven.artifact(
-            "org.mockito",
-            "mockito-errorprone",
-            "4.1.0",
-            testonly = True,
-        ),
-    ] + DAGGER_ARTIFACTS + AVRO_ARTIFACTS + CONFLUENT_ARTIFACTS + JMH_ARTIFACTS,
+    ] + testonly_artifacts([
+        "com.google.testparameterinjector:test-parameter-injector:1.6",
+        "com.google.truth.extensions:truth-java8-extension:1.1.3",
+        "com.google.truth.extensions:truth-liteproto-extension:1.1.3",
+        "com.google.truth.extensions:truth-proto-extension:1.1.3",
+        "com.google.truth:truth:1.1.3",
+        "junit:junit:4.13.2",
+        "nl.jqno.equalsverifier:equalsverifier:3.8.1",
+        "org.apache.kafka:kafka-streams-test-utils:3.0.0",
+        "org.mockito:mockito-core:4.2.0",
+        "org.mockito:mockito-errorprone:4.2.0",
+    ]) + DAGGER_ARTIFACTS + AVRO_ARTIFACTS + CONFLUENT_ARTIFACTS + JMH_ARTIFACTS,
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
     override_targets = {

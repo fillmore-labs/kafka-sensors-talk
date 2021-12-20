@@ -3,10 +3,7 @@ load("@rules_java//java:defs.bzl", "java_library")
 java_library(
     name = "mapper",
     srcs = glob(["*.java"]),
-    javacopts = [
-        "-Amapstruct.suppressGeneratorTimestamp=true",
-        "-AskipDefs=MapperImpl$$",
-    ],
+    javacopts = ["-AskipDefs=MapperImpl$$"],
     visibility = [
         "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/specific:__pkg__",
         "//chapter11/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/specific_faster/mapper:__pkg__",

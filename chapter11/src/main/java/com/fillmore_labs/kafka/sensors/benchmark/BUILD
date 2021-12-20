@@ -1,6 +1,4 @@
-load("@io_bazel_rules_docker//java:image.bzl", "java_image")
 load("@rules_java//java:defs.bzl", "java_binary", "java_library")
-load("//third_party/images:java_base.bzl", "JAVA_BASE")
 
 java_library(
     name = "benchmark_library",
@@ -55,16 +53,6 @@ java_binary(
     name = "benchmark",
     data = DATA + PROFILER_DATA,
     jvm_flags = JVM_FLAGS + PROFILER_PATH,
-    main_class = "org.openjdk.jmh.Main",
-    visibility = ["//visibility:public"],
-    runtime_deps = [":benchmark_library"],
-)
-
-java_image(
-    name = "serializer_benchmark",
-    base = JAVA_BASE,
-    data = DATA,
-    jvm_flags = JVM_FLAGS,
     main_class = "org.openjdk.jmh.Main",
     visibility = ["//visibility:public"],
     runtime_deps = [":benchmark_library"],
