@@ -224,12 +224,6 @@ confluent_repositories()
 
 # ---
 
-load("//third_party/jmh:defs.bzl", "JMH_ARTIFACTS", "jmh_repositories")
-
-jmh_repositories()
-
-# ---
-
 load("//third_party/async_profiler:defs.bzl", "async_profiler_repositories")
 
 async_profiler_repositories()
@@ -254,15 +248,14 @@ maven_install(
         "com.google.code.findbugs:jsr305:3.0.2",
         "com.google.code.gson:gson:2.8.9",
         "com.google.errorprone:error_prone_annotations:2.10.0",
-        "com.google.flogger:flogger-system-backend:0.7.3",
-        "com.google.flogger:flogger:0.7.3",
+        "com.google.flogger:flogger-system-backend:0.7.4",
+        "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.0.1-jre",
         "com.google.j2objc:j2objc-annotations:1.3",
-        "com.networknt:json-schema-validator:1.0.64",
         "info.picocli:picocli:4.6.2",
-        "io.helidon.config:helidon-config-object-mapping:2.4.0",
-        "io.helidon.config:helidon-config-yaml:2.4.0",
-        "io.helidon.config:helidon-config:2.4.0",
+        "io.helidon.config:helidon-config-object-mapping:2.4.1",
+        "io.helidon.config:helidon-config-yaml:2.4.1",
+        "io.helidon.config:helidon-config:2.4.1",
         "jakarta.annotation:jakarta.annotation-api:1.3.5",
         "javax.inject:javax.inject:1",
         "org.apache.kafka:kafka-clients:3.0.0",
@@ -270,28 +263,31 @@ maven_install(
         "org.apache.kafka:kafka-streams:3.0.0",
         "org.apache.kafka:kafka_2.13:3.0.0",
         "org.apache.thrift:libthrift:0.15.0",
-        "org.checkerframework:checker-qual:3.21.0",
-        "org.checkerframework:checker-util:3.21.0",
-        "org.checkerframework:checker:3.21.0",
+        "org.checkerframework:checker-qual:3.21.1",
+        "org.checkerframework:checker-util:3.21.1",
+        "org.checkerframework:checker:3.21.1",
         "org.immutables:gson:2.9.0-rc1",
         "org.immutables:value-annotations:2.9.0-rc1",
         "org.immutables:value-processor:2.9.0-rc1",
         "org.mapstruct:mapstruct-processor:1.5.0.Beta2",
         "org.mapstruct:mapstruct:1.5.0.Beta2",
+        "org.openjdk.jmh:jmh-core:1.34",
+        "org.openjdk.jmh:jmh-generator-annprocess:1.34",
         "org.slf4j:slf4j-api:2.0.0-alpha5",
         "org.slf4j:slf4j-jdk14:2.0.0-alpha5",
     ] + testonly_artifacts([
-        "com.google.testparameterinjector:test-parameter-injector:1.6",
+        "com.google.testparameterinjector:test-parameter-injector:1.7",
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth.extensions:truth-liteproto-extension:1.1.3",
         "com.google.truth.extensions:truth-proto-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
+        "com.networknt:json-schema-validator:1.0.65",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.8.1",
+        "nl.jqno.equalsverifier:equalsverifier:3.8.2",
         "org.apache.kafka:kafka-streams-test-utils:3.0.0",
         "org.mockito:mockito-core:4.2.0",
         "org.mockito:mockito-errorprone:4.2.0",
-    ]) + DAGGER_ARTIFACTS + AVRO_ARTIFACTS + CONFLUENT_ARTIFACTS + JMH_ARTIFACTS,
+    ]) + DAGGER_ARTIFACTS + AVRO_ARTIFACTS + CONFLUENT_ARTIFACTS,
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
     override_targets = {
