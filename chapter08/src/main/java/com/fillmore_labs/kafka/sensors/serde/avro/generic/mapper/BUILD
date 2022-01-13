@@ -6,6 +6,7 @@ java_library(
     visibility = [
         "//chapter08/src/main/java/com/fillmore_labs/kafka/sensors/serde/avro/generic:__pkg__",
         "//chapter08/src/test:__subpackages__",
+        "//chapter09/src/main/java/com/fillmore_labs/kafka/sensors/serde/confluent/generic/mapper:__pkg__",
     ],
     deps = [
         "//chapter02/src/main/java/com/fillmore_labs/kafka/sensors/model",
