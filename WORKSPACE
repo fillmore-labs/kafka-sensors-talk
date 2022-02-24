@@ -65,16 +65,16 @@ http_archive(
 
 http_archive(
     name = "com_google_dagger",
-    sha256 = "f42ad246629eb127a56372a5ec2b2f977617dcefcf514c68a7a264c1fdd1bb82",
-    strip_prefix = "dagger-dagger-2.40.5",
-    url = "https://github.com/google/dagger/archive/dagger-2.40.5.tar.gz",
+    sha256 = "764b5a3d42d162869b2da3cf5fbf153ccd46475970c37349c4f5dd56bb4534e1",
+    strip_prefix = "dagger-dagger-2.41",
+    url = "https://github.com/google/dagger/archive/dagger-2.41.tar.gz",
 )
 
 http_archive(
     name = "com_github_bazelbuild_buildtools",
-    sha256 = "",
-    strip_prefix = "buildtools-4.2.4",
-    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/4.2.4.tar.gz",
+    sha256 = "7f43df3cca7bb4ea443b4159edd7a204c8d771890a69a50a190dc9543760ca21",
+    strip_prefix = "buildtools-5.0.1",
+    url = "https://github.com/bazelbuild/buildtools/archive/refs/tags/5.0.1.tar.gz",
 )
 
 http_archive(
@@ -88,7 +88,7 @@ http_archive(
 
 load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
 
-go_register_toolchains(go_version = "1.17.5")
+go_register_toolchains(go_version = "1.17.7")
 
 go_rules_dependencies()
 
@@ -161,7 +161,7 @@ bind(
 
 load("@io_bazel_rules_scala//:scala_config.bzl", "scala_config")
 
-scala_config(scala_version = "2.13.7")
+scala_config(scala_version = "2.13.8")
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
 
@@ -169,23 +169,23 @@ scala_repositories(
     fetch_sources = True,
     overriden_artifacts = {
         "io_bazel_rules_scala_scala_compiler": {
-            "artifact": "org.scala-lang:scala-compiler:2.13.7",
+            "artifact": "org.scala-lang:scala-compiler:2.13.8",
             "deps": [
                 "@io_bazel_rules_scala_scala_library",
                 "@io_bazel_rules_scala_scala_reflect",
             ],
-            "sha256": "a450602f03a4686919e60d1aeced549559f1eaffbaf30ffa7987c8d97e3e79a9",
+            "sha256": "b248cb6f390ee8bceb912af3da471146fdf003702a173d750f986b1d4a3362e6",
         },
         "io_bazel_rules_scala_scala_library": {
-            "artifact": "org.scala-lang:scala-library:2.13.7",
-            "sha256": "a8bc08f3b9ff93d0496032bf2677163071b8d212992f41dbf04212e07d91616b",
+            "artifact": "org.scala-lang:scala-library:2.13.8",
+            "sha256": "a0882b82514190c2bac7d1a459872a75f005fc0f3e88b2bc0390367146e35db7",
         },
         "io_bazel_rules_scala_scala_reflect": {
-            "artifact": "org.scala-lang:scala-reflect:2.13.7",
+            "artifact": "org.scala-lang:scala-reflect:2.13.8",
             "deps": [
                 "@io_bazel_rules_scala_scala_library",
             ],
-            "sha256": "a7bc4eca6970083d426a8d081aec313c7b7207d5f83b6724995e34078edc5cbb",
+            "sha256": "fdfbcc92e87f424578b303bcb47e0f55fee990c4b6da0006c9e75879d1e442e4",
         },
     },
 )
@@ -235,7 +235,7 @@ load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
-        "com.amazon.ion:ion-java:1.9.0",
+        "com.amazon.ion:ion-java:1.9.1",
         "com.fasterxml.jackson.core:jackson-annotations:2.13.1",
         "com.fasterxml.jackson.core:jackson-core:2.13.1",
         "com.fasterxml.jackson.core:jackson-databind:2.13.1",
@@ -246,47 +246,47 @@ maven_install(
         "com.fasterxml.jackson.module:jackson-module-blackbird:2.13.1",
         "com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.1",
         "com.google.code.findbugs:jsr305:3.0.2",
-        "com.google.code.gson:gson:2.8.9",
-        "com.google.errorprone:error_prone_annotations:2.10.0",
+        "com.google.code.gson:gson:2.9.0",
+        "com.google.errorprone:error_prone_annotations:2.11.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.0.1-jre",
         "com.google.j2objc:j2objc-annotations:1.3",
-        "info.picocli:picocli:4.6.2",
-        "io.helidon.config:helidon-config-object-mapping:2.4.1",
-        "io.helidon.config:helidon-config-yaml:2.4.1",
-        "io.helidon.config:helidon-config:2.4.1",
+        "info.picocli:picocli:4.6.3",
+        "io.helidon.config:helidon-config-object-mapping:3.0.0-M1",
+        "io.helidon.config:helidon-config-yaml:3.0.0-M1",
+        "io.helidon.config:helidon-config:3.0.0-M1",
         "jakarta.annotation:jakarta.annotation-api:1.3.5",
         "javax.inject:javax.inject:1",
-        "org.apache.kafka:kafka-clients:3.0.0",
-        "org.apache.kafka:kafka-raft:3.0.0",
-        "org.apache.kafka:kafka-streams:3.0.0",
-        "org.apache.kafka:kafka_2.13:3.0.0",
-        "org.apache.thrift:libthrift:0.15.0",
+        "org.apache.kafka:kafka-clients:3.1.0",
+        "org.apache.kafka:kafka-raft:3.1.0",
+        "org.apache.kafka:kafka-streams:3.1.0",
+        "org.apache.kafka:kafka_2.13:3.1.0",
+        "org.apache.thrift:libthrift:0.16.0",
         "org.checkerframework:checker-qual:3.21.1",
         "org.checkerframework:checker-util:3.21.1",
         "org.checkerframework:checker:3.21.1",
-        "org.immutables:gson:2.9.0-rc1",
-        "org.immutables:value-annotations:2.9.0-rc1",
-        "org.immutables:value-processor:2.9.0-rc1",
+        "org.immutables:gson:2.9.0",
+        "org.immutables:value-annotations:2.9.0",
+        "org.immutables:value-processor:2.9.0",
         "org.mapstruct:mapstruct-processor:1.5.0.Beta2",
         "org.mapstruct:mapstruct:1.5.0.Beta2",
         "org.openjdk.jmh:jmh-core:1.34",
         "org.openjdk.jmh:jmh-generator-annprocess:1.34",
-        "org.slf4j:slf4j-api:2.0.0-alpha5",
-        "org.slf4j:slf4j-jdk14:2.0.0-alpha5",
+        "org.slf4j:slf4j-api:2.0.0-alpha6",
+        "org.slf4j:slf4j-jdk14:2.0.0-alpha6",
     ] + testonly_artifacts([
-        "com.google.testparameterinjector:test-parameter-injector:1.7",
+        "com.google.testparameterinjector:test-parameter-injector:1.8",
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
         "com.google.truth.extensions:truth-liteproto-extension:1.1.3",
         "com.google.truth.extensions:truth-proto-extension:1.1.3",
         "com.google.truth:truth:1.1.3",
-        "com.networknt:json-schema-validator:1.0.65",
+        "com.networknt:json-schema-validator:1.0.66",
         "junit:junit:4.13.2",
-        "nl.jqno.equalsverifier:equalsverifier:3.8.2",
-        "org.apache.kafka:kafka-streams-test-utils:3.0.0",
-        "org.mockito:mockito-core:4.2.0",
-        "org.mockito:mockito-errorprone:4.2.0",
+        "nl.jqno.equalsverifier:equalsverifier:3.9",
+        "org.apache.kafka:kafka-streams-test-utils:3.1.0",
+        "org.mockito:mockito-core:4.3.1",
+        "org.mockito:mockito-errorprone:4.3.1",
     ]) + DAGGER_ARTIFACTS + AVRO_ARTIFACTS + CONFLUENT_ARTIFACTS,
     fetch_sources = True,
     maven_install_json = "//:maven_install.json",
