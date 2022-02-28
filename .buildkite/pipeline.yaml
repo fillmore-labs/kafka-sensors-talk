@@ -10,26 +10,10 @@ steps:
         //chapter07/... //chapter08/... //chapter09/... //chapter11/...
     branches: "!main"
 
-  - label: ':bazel: Test & Coverage'
+  - label: ':codecov: + :codeclimate: Test & Coverage'
     commands:
       - bazel coverage --config=ci
         //chapter02/... //chapter03/... //chapter04/... //chapter05/...
         //chapter07/... //chapter08/... //chapter09/... //chapter11/...
+      - sh .buildkite/upload_coverage.sh
     branches: "main"
-    key: "coverage"
-
-  - group: ":trollface: Upload Coverage"
-    steps:
-      - label: ':codecov: Upload Coverage'
-        commands:
-          - codecov -f "$(bazel info output_path)/_coverage/_coverage_report.dat"
-        branches: "main"
-
-      - label: ':codeclimate: Upload Coverage'
-        commands:
-          - cc-test-reporter format-coverage -t lcov -o .coverage/codeclimate.json
-            "$(bazel info output_path)/_coverage/_coverage_report.dat"
-          - cc-test-reporter upload-coverage -r "$CC_TEST_REPORTER_ID" -i .coverage/codeclimate.json
-        branches: "main"
-
-    depends_on: "coverage"
