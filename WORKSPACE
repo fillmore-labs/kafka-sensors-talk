@@ -44,9 +44,9 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "52512ebcabe18134040c22bfc0381b4526cacb01e5bc07fc94dbbaa9a331c7d6",
-    strip_prefix = "protobuf-0a246e23f8e9997e2f7e5887b2523e867c8653c5",
-    url = "https://github.com/protocolbuffers/protobuf/archive/0a246e23f8e9997e2f7e5887b2523e867c8653c5.tar.gz",
+    sha256 = "413cdd214172f2124da8201e8b7281dc39073364ee2cb2a4c152eeb7db837be9",
+    strip_prefix = "protobuf-3.20.0-rc1",
+    url = "https://github.com/protocolbuffers/protobuf/archive/refs/tags/v3.20.0-rc1.tar.gz",
 )
 
 http_archive(
@@ -235,7 +235,7 @@ load("//toolchain:defs.bzl", "testonly_artifacts")
 
 maven_install(
     artifacts = [
-        "com.amazon.ion:ion-java:1.9.1",
+        "com.amazon.ion:ion-java:1.9.2",
         "com.fasterxml.jackson.core:jackson-annotations:2.13.1",
         "com.fasterxml.jackson.core:jackson-core:2.13.1",
         "com.fasterxml.jackson.core:jackson-databind:2.13.1",
@@ -250,7 +250,7 @@ maven_install(
         "com.google.errorprone:error_prone_annotations:2.11.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
-        "com.google.guava:guava:31.0.1-jre",
+        "com.google.guava:guava:31.1-jre",
         "com.google.j2objc:j2objc-annotations:1.3",
         "info.picocli:picocli:4.6.3",
         "io.helidon.config:helidon-config-object-mapping:3.0.0-M1",
@@ -263,9 +263,9 @@ maven_install(
         "org.apache.kafka:kafka-streams:3.1.0",
         "org.apache.kafka:kafka_2.13:3.1.0",
         "org.apache.thrift:libthrift:0.16.0",
-        "org.checkerframework:checker-qual:3.21.1",
-        "org.checkerframework:checker-util:3.21.1",
-        "org.checkerframework:checker:3.21.1",
+        "org.checkerframework:checker-qual:3.21.3",
+        "org.checkerframework:checker-util:3.21.3",
+        "org.checkerframework:checker:3.21.3",
         "org.immutables:gson:2.9.0",
         "org.immutables:value-annotations:2.9.0",
         "org.immutables:value-processor:2.9.0",
