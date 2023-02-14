@@ -268,7 +268,7 @@ maven_install(
         "org.checkerframework:checker:3.21.3",
         "org.immutables:gson:2.9.3",
         "org.immutables:value-annotations:2.9.3",
-        "org.immutables:value-processor:2.9.0",
+        "org.immutables:value-processor:2.9.3",
         "org.mapstruct:mapstruct-processor:1.5.0.Beta2",
         "org.mapstruct:mapstruct:1.5.0.Beta2",
         "org.openjdk.jmh:jmh-core:1.34",
