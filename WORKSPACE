@@ -238,7 +238,7 @@ maven_install(
         "com.amazon.ion:ion-java:1.9.5",
         "com.fasterxml.jackson.core:jackson-annotations:2.14.2",
         "com.fasterxml.jackson.core:jackson-core:2.14.2",
-        "com.fasterxml.jackson.core:jackson-databind:2.13.1",
+        "com.fasterxml.jackson.core:jackson-databind:2.14.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.13.1",
         "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.1",
         "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.1",
