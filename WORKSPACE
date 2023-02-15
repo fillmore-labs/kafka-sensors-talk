@@ -240,7 +240,7 @@ maven_install(
         "com.fasterxml.jackson.core:jackson-core:2.14.2",
         "com.fasterxml.jackson.core:jackson-databind:2.14.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.14.2",
-        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.1",
+        "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.13.1",
         "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1",
         "com.fasterxml.jackson.module:jackson-module-blackbird:2.13.1",
