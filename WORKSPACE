@@ -246,7 +246,7 @@ maven_install(
         "com.fasterxml.jackson.module:jackson-module-blackbird:2.14.2",
         "com.fasterxml.jackson.module:jackson-module-parameter-names:2.14.2",
         "com.google.code.findbugs:jsr305:3.0.2",
-        "com.google.code.gson:gson:2.9.0",
+        "com.google.code.gson:gson:2.10.1",
         "com.google.errorprone:error_prone_annotations:2.11.0",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
