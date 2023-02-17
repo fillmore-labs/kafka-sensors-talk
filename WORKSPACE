@@ -252,7 +252,7 @@ maven_install(
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:31.1-jre",
         "com.google.j2objc:j2objc-annotations:1.3",
-        "info.picocli:picocli:4.6.3",
+        "info.picocli:picocli:4.7.1",
         "io.helidon.config:helidon-config-object-mapping:3.0.0-M1",
         "io.helidon.config:helidon-config-yaml:3.0.0-M1",
         "io.helidon.config:helidon-config:3.0.0-M1",
