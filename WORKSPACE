@@ -255,7 +255,7 @@ maven_install(
         "info.picocli:picocli:4.7.1",
         "io.helidon.config:helidon-config-object-mapping:3.0.0-M1",
         "io.helidon.config:helidon-config-yaml:3.0.0-M1",
-        "io.helidon.config:helidon-config:3.0.0-M1",
+        "io.helidon.config:helidon-config:3.1.2",
         "jakarta.annotation:jakarta.annotation-api:1.3.5",
         "javax.inject:javax.inject:1",
         "org.apache.kafka:kafka-clients:3.1.0",
