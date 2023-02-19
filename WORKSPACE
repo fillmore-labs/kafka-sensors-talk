@@ -272,7 +272,7 @@ maven_install(
         "org.mapstruct:mapstruct-processor:1.5.3.Final",
         "org.mapstruct:mapstruct:1.5.3.Final",
         "org.openjdk.jmh:jmh-core:1.36",
-        "org.openjdk.jmh:jmh-generator-annprocess:1.34",
+        "org.openjdk.jmh:jmh-generator-annprocess:1.36",
         "org.slf4j:slf4j-api:2.0.6",
         "org.slf4j:slf4j-jdk14:2.0.6",
     ] + testonly_artifacts([
