@@ -274,7 +274,7 @@ maven_install(
         "org.openjdk.jmh:jmh-core:1.36",
         "org.openjdk.jmh:jmh-generator-annprocess:1.36",
         "org.slf4j:slf4j-api:2.0.7",
-        "org.slf4j:slf4j-jdk14:2.0.6",
+        "org.slf4j:slf4j-jdk14:2.0.7",
     ] + testonly_artifacts([
         "com.google.testparameterinjector:test-parameter-injector:1.8",
         "com.google.truth.extensions:truth-java8-extension:1.1.3",
