@@ -239,7 +239,7 @@ maven_install(
         "com.fasterxml.jackson.core:jackson-annotations:2.15.0",
         "com.fasterxml.jackson.core:jackson-core:2.15.0",
         "com.fasterxml.jackson.core:jackson-databind:2.15.0",
-        "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.14.2",
+        "com.fasterxml.jackson.datatype:jackson-datatype-guava:2.15.0",
         "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.14.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.14.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.2",
