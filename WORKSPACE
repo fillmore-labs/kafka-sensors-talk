@@ -263,7 +263,7 @@ maven_install(
         "org.apache.kafka:kafka-streams:3.4.0",
         "org.apache.kafka:kafka_2.13:3.4.0",
         "org.apache.thrift:libthrift:0.18.1",
-        "org.checkerframework:checker-qual:3.33.0",
+        "org.checkerframework:checker-qual:3.34.0",
         "org.checkerframework:checker-util:3.33.0",
         "org.checkerframework:checker:3.33.0",
         "org.immutables:gson:2.9.3",
