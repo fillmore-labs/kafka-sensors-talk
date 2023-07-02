@@ -244,7 +244,7 @@ maven_install(
         "com.fasterxml.jackson.datatype:jackson-datatype-joda:2.15.2",
         "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2",
         "com.fasterxml.jackson.module:jackson-module-blackbird:2.15.2",
-        "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.1",
+        "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.2",
         "com.google.code.findbugs:jsr305:3.0.2",
         "com.google.code.gson:gson:2.10.1",
         "com.google.errorprone:error_prone_annotations:2.19.1",
