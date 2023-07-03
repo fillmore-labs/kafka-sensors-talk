@@ -261,7 +261,7 @@ maven_install(
         "org.apache.kafka:kafka-clients:3.5.0",
         "org.apache.kafka:kafka-raft:3.5.0",
         "org.apache.kafka:kafka-streams:3.5.0",
-        "org.apache.kafka:kafka_2.13:3.4.0",
+        "org.apache.kafka:kafka_2.13:3.5.0",
         "org.apache.thrift:libthrift:0.18.1",
         "org.checkerframework:checker-qual:3.34.0",
         "org.checkerframework:checker-util:3.34.0",
