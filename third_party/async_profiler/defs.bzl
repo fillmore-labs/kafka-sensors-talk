@@ -6,9 +6,9 @@ def async_profiler_repositories():
     http_archive(
         name = "async_profiler_linux_x64",
         build_file = "//third_party/async_profiler:BUILD.async_profiler.bazel",
-        sha256 = "085f81ee0b231530c8b8171f84c8915874af68eaa9199413516f1ff34055a703",
-        strip_prefix = "async-profiler-2.7-linux-x64",
-        urls = ["https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.7/async-profiler-2.7-linux-x64.tar.gz"],
+        sha256 = "b9a094bc480f233f72141b7793c098800054438e0e6cfe5b7f2fe13ef4ad11f0",
+        strip_prefix = "async-profiler-2.9-linux-x64",
+        urls = ["https://github.com/jvm-profiling-tools/async-profiler/releases/download/v2.9/async-profiler-2.9-linux-x64.tar.gz"],
     )
 
     http_archive(
