@@ -247,7 +247,7 @@ maven_install(
         "com.fasterxml.jackson.module:jackson-module-parameter-names:2.15.2",
         "com.google.code.findbugs:jsr305:3.0.2",
         "com.google.code.gson:gson:2.10.1",
-        "com.google.errorprone:error_prone_annotations:2.21.0",
+        "com.google.errorprone:error_prone_annotations:2.21.1",
         "com.google.flogger:flogger-system-backend:0.7.4",
         "com.google.flogger:flogger:0.7.4",
         "com.google.guava:guava:32.1.2-jre",
