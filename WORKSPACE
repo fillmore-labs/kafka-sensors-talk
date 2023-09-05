@@ -273,7 +273,7 @@ maven_install(
         "org.mapstruct:mapstruct:1.5.5.Final",
         "org.openjdk.jmh:jmh-core:1.37",
         "org.openjdk.jmh:jmh-generator-annprocess:1.37",
-        "org.slf4j:slf4j-api:2.0.7",
+        "org.slf4j:slf4j-api:2.0.9",
         "org.slf4j:slf4j-jdk14:2.0.7",
     ] + testonly_artifacts([
         "com.google.testparameterinjector:test-parameter-injector:1.8",
