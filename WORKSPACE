@@ -265,7 +265,7 @@ maven_install(
         "org.apache.thrift:libthrift:0.19.0",
         "org.checkerframework:checker-qual:3.40.0",
         "org.checkerframework:checker-util:3.40.0",
-        "org.checkerframework:checker:3.39.0",
+        "org.checkerframework:checker:3.40.0",
         "org.immutables:gson:2.10.0",
         "org.immutables:value-annotations:2.10.0",
         "org.immutables:value-processor:2.10.0",
