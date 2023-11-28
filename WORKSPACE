@@ -254,7 +254,7 @@ maven_install(
         "com.google.j2objc:j2objc-annotations:2.8",
         "info.picocli:picocli:4.7.5",
         "io.helidon.config:helidon-config-object-mapping:4.0.1",
-        "io.helidon.config:helidon-config-yaml:4.0.0",
+        "io.helidon.config:helidon-config-yaml:4.0.1",
         "io.helidon.config:helidon-config:4.0.1",
         "jakarta.annotation:jakarta.annotation-api:2.1.1",
         "javax.inject:javax.inject:1",
