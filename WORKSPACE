@@ -258,7 +258,7 @@ maven_install(
         "io.helidon.config:helidon-config:4.0.1",
         "jakarta.annotation:jakarta.annotation-api:2.1.1",
         "javax.inject:javax.inject:1",
-        "org.apache.kafka:kafka-clients:3.6.0",
+        "org.apache.kafka:kafka-clients:3.6.1",
         "org.apache.kafka:kafka-raft:3.6.0",
         "org.apache.kafka:kafka-streams:3.6.0",
         "org.apache.kafka:kafka_2.13:3.6.0",
