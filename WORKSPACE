@@ -260,7 +260,7 @@ maven_install(
         "javax.inject:javax.inject:1",
         "org.apache.kafka:kafka-clients:3.6.1",
         "org.apache.kafka:kafka-raft:3.6.1",
-        "org.apache.kafka:kafka-streams:3.6.0",
+        "org.apache.kafka:kafka-streams:3.6.1",
         "org.apache.kafka:kafka_2.13:3.6.0",
         "org.apache.thrift:libthrift:0.19.0",
         "org.checkerframework:checker-qual:3.41.0",
