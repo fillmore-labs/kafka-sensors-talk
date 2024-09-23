@@ -250,7 +250,7 @@ maven_install(
         "com.google.errorprone:error_prone_annotations:2.23.0",
         "com.google.flogger:flogger-system-backend:0.8",
         "com.google.flogger:flogger:0.8",
-        "com.google.guava:guava:32.1.3-jre",
+        "com.google.guava:guava:33.3.1-jre",
         "com.google.j2objc:j2objc-annotations:2.8",
         "info.picocli:picocli:4.7.5",
         "io.helidon.config:helidon-config-object-mapping:4.0.1",
